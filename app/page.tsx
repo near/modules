@@ -5,7 +5,7 @@ import Nav from "@/components/nav";
 
 export default function Page() {
   return (
-    <main className="min-h-screen p-5 md:p-24 pt-10 max-w-screen-xl mx-auto">
+    <main className="min-h-screen p-5 md:p-10 py-10 max-w-screen-xl mx-auto">
       <Nav />
       <Home />
     </main>
