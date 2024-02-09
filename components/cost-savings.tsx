@@ -14,8 +14,10 @@ interface DataItem {
 
 export default function CostSavings({
   data,
+  fourMbBatch,
 }: {
   data: DataItem[];
+  fourMbBatch: boolean;
 }) {
   // calculate total call data by summing calldata_mb
   const totalCalldata = (data: DataItem[]) =>
@@ -41,7 +43,11 @@ export default function CostSavings({
       data.reduce(
         (acc, curr) =>
           acc +
-          curr.weekly_approx_near_l2_calldata_cost_4mb_usd,
+          curr[
+            fourMbBatch
+              ? "weekly_approx_near_l2_calldata_cost_4mb_usd"
+              : "weekly_approx_near_l2_calldata_cost_1mb_usd"
+          ],
         0
       ) * 100
     ) / 100;
@@ -85,38 +91,50 @@ export default function CostSavings({
   );
 
   return (
-    <div className="flex place-content-between items-center w-full border border-slate-200 rounded-md p-5 mb-10">
-      <div>
+    <div className="flex flex-col md:flex-row md:place-content-between md:items-center w-full border border-slate-200 rounded-md p-5 mb-10">
+      <div className="mb-3 md:mb-0">
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
           Total data size
-          <InfoTooltip>Content here</InfoTooltip>
+          <InfoTooltip>
+            Total data processed by the rollup for the
+            period
+          </InfoTooltip>
         </div>
         <div className="font-semibold">
           {totalDataMB} MB
         </div>
       </div>
-      <div>
+      <div className="mb-3 md:mb-0">
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
-          Total cost w/ rollup
-          <InfoTooltip>Content here</InfoTooltip>
+          Total cost w/ L1
+          <InfoTooltip>
+            Actual cost for the selected rollup to store
+            data on a blockchain for the period
+          </InfoTooltip>
         </div>
         <div className="font-semibold">
           {totalCostRollupUSD}
         </div>
       </div>
-      <div>
+      <div className="mb-3 md:mb-0">
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
           Total cost w/ NEAR DA
-          <InfoTooltip>Content here</InfoTooltip>
+          <InfoTooltip>
+            Estimated cost to store the same amount of data
+            on NEAR
+          </InfoTooltip>
         </div>
         <div className="font-semibold text-green-500">
           {totalCostNearDAUSD}
         </div>
       </div>
-      <div>
+      <div className="mb-3 md:mb-0">
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
           Total savings w/ NEAR DA
-          <InfoTooltip>Content here</InfoTooltip>
+          <InfoTooltip>
+            Estimated savings to store the same amount of
+            data on NEAR
+          </InfoTooltip>
         </div>
         <div className="font-semibold text-green-500">
           {totalSavingsUSD}
@@ -125,7 +143,10 @@ export default function CostSavings({
       <div>
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
           Savings per MB w/ NEAR DA
-          <InfoTooltip>Content here</InfoTooltip>
+          <InfoTooltip>
+            Estimated savings per MB to store the same
+            amount of data on NEAR
+          </InfoTooltip>
         </div>
         <div className="font-semibold text-green-500">
           {savingsPerMBUSD}/MB

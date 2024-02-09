@@ -5,6 +5,8 @@ import Combobox from "@/components/combobox";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "@phosphor-icons/react";
 import CostSavings from "@/components/cost-savings";
+import { Label } from "@/components/ui/label";
+import { Switch } from "@/components/ui/switch";
 
 interface DataItem {
   calldata_mb: number;
@@ -47,6 +49,7 @@ export default function Home() {
   const [rollupData, setRollupData] = useState<DataItem[]>(
     []
   );
+  const [isSwitchOn, setSwitchState] = useState(false);
   const [selectedRollup, setSelectedRollup] =
     useState("arbitrum");
 
@@ -70,7 +73,7 @@ export default function Home() {
   });
 
   return (
-    <main className="min-h-screen py-6">
+    <main className="min-h-screen md:py-6 pb-6">
       <section className="mb-8 flex flex-wrap">
         <div className="w-full md:w-1/2">
           <h1 className="text-slate-800">
@@ -83,7 +86,13 @@ export default function Home() {
           </h4>
           <Button
             variant="outline"
-            className="mt-7 p-6 border-slate-800 rounded-md"
+            className="mb-12 md:mb-0 mt-7 p-6 border-slate-800 rounded-md"
+            onClick={() => {
+              window.open(
+                "https://github.com/near/rollup-data-availability/",
+                "_blank"
+              );
+            }}
           >
             Learn more on Github{" "}
             <ArrowUpRight size={16} className="ml-1" />
@@ -124,14 +133,39 @@ export default function Home() {
       <h6 className="text-slate-800 font-semibold">
         Select a rollup to compare costs
       </h6>
-      <div className="flex place-content-between items-center my-5 mt-0.5">
+      <div className="flex place-content-between flex-wrap items-center my-2 mt-0.5">
         <Combobox
           data={rollups}
           value={selectedRollup}
           setValue={(v) => setSelectedRollup(v)}
         />
+        <div
+          className="flex items-center space-x-2
+      "
+        >
+          <Label htmlFor="airplane-mode">
+            4 MB batches
+          </Label>
+          <Switch
+            id="airplane-mode"
+            checked={isSwitchOn}
+            onCheckedChange={() => {
+              setSwitchState(!isSwitchOn);
+            }}
+          />
+        </div>
+      </div>
+      <CostSavings
+        data={rollupData}
+        fourMbBatch={isSwitchOn}
+      />
+      <div className="z-10 w-full text-sm border border-slate-200 rounded-md p-5">
+        <h6 className="text-slate-800 font-semibold mb-5 text-center">
+          Weekly Cost (L1 vs NEAR)
+        </h6>
+        <Chart data={rollupData} fourMbBatch={isSwitchOn} />
         {rollupData && rollupData.length > 0 && (
-          <div className="text-xs text-slate-500">
+          <div className="text-xs text-slate-500 text-right mt-6 mb-2">
             Showing data from 
             {rollupData &&
             rollupData.length > 0 &&
@@ -152,13 +186,6 @@ export default function Home() {
               : "N/A"}
           </div>
         )}
-      </div>
-      <CostSavings data={rollupData} />
-      <div className="z-10 w-full text-sm border border-slate-200 rounded-md p-5">
-        <h6 className="text-slate-800 font-semibold mb-5 text-center">
-          Weekly Cost ({selectedRollup} vs near)
-        </h6>
-        <Chart data={rollupData} />
       </div>
     </main>
   );

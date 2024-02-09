@@ -24,8 +24,10 @@ interface DataItem {
 
 export default function Chart({
   data,
+  fourMbBatch,
 }: {
   data: DataItem[];
+  fourMbBatch: boolean;
 }) {
   const CustomTooltip = ({
     active,
@@ -108,6 +110,7 @@ export default function Chart({
         <Line
           type="monotone"
           dataKey="l1_calldata_cost_usd"
+          name="L1 DA Cost"
           stroke="#FF6442"
           activeDot={{ r: 8 }}
           strokeDasharray="5 5"
@@ -115,7 +118,12 @@ export default function Chart({
         />
         <Line
           type="monotone"
-          dataKey="weekly_approx_near_l2_calldata_cost_4mb_usd"
+          dataKey={
+            fourMbBatch
+              ? "weekly_approx_near_l2_calldata_cost_4mb_usd"
+              : "weekly_approx_near_l2_calldata_cost_1mb_usd"
+          }
+          name="Estimated NEAR DA Cost"
           stroke="#00B654"
           strokeWidth={2}
         />

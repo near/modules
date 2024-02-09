@@ -11,19 +11,19 @@ export default function Nav() {
       </h4>
       <a
         className="ml-auto underline text-slate-800"
-        href="#docs"
+        href="https://docs.near.org/data-availability/welcome"
       >
         Docs
       </a>
       <a
         className="underline ml-4 text-slate-800"
-        href="#github"
+        href="https://github.com/near/rollup-data-availability/"
       >
         Github
       </a>
       <a
         className="underline ml-4 text-slate-800"
-        href="#contact"
+        href="https://forms.gle/LWJoTpTiCbSheUL26"
       >
         Contact
       </a>

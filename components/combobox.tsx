@@ -41,7 +41,7 @@ export default function Combobox({
             <>{`${
               data.find((rollup) => rollup.value === value)
                 ?.label
-            } vs NEAR`}</>
+            }`}</>
           ) : (
             "Select rollup..."
           )}
