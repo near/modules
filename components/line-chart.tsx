@@ -44,11 +44,10 @@ export default function Chart({
           }}
         >
           <div>
-            {
+            {payload[0].payload.week &&
               new Date(payload[0].payload.week)
                 .toISOString()
-                .split("T")[0]
-            }
+                .split("T")[0]}
           </div>
           <div>
             {data[0]?.name}:{" "}
@@ -91,7 +90,7 @@ export default function Chart({
         <XAxis
           dataKey="week"
           tickFormatter={(value) =>
-            new Date(value).toISOString().split("T")[0]
+            new Date(value)?.toISOString().split("T")[0]
           }
         />
         {/* domain={['auto', 'auto']} */}
