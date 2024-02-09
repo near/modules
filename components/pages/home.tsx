@@ -66,6 +66,7 @@ export default function Home() {
   }, [selectedRollup]);
 
   rollupData.sort((a, b) => {
+    if (!a.week || !b.week) return 0;
     return (
       new Date(a.week).getTime() -
       new Date(b.week).getTime()
@@ -169,7 +170,8 @@ export default function Home() {
             Showing data from 
             {rollupData &&
             rollupData.length > 0 &&
-            rollupData[0]?.week
+            rollupData[0]?.week &&
+            !isNaN(Date.parse(rollupData[0]?.week))
               ? new Date(rollupData?.[0]?.week)
                   .toISOString()
                   .split("T")[0]
@@ -177,7 +179,9 @@ export default function Home() {
             {" to "}
             {rollupData &&
             rollupData.length > 0 &&
-            rollupData[rollupData.length - 1]?.week
+            rollupData[rollupData.length - 1]?.week &&
+            rollupData[0]?.week &&
+            !isNaN(Date.parse(rollupData[0]?.week))
               ? new Date(
                   rollupData?.[rollupData.length - 1]?.week
                 )

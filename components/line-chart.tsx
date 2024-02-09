@@ -44,7 +44,8 @@ export default function Chart({
           }}
         >
           <div>
-            {payload[0].payload.week &&
+            {payload[0]?.payload?.week &&
+              !isNaN(Date.parse(payload[0].payload.week)) &&
               new Date(payload[0].payload.week)
                 .toISOString()
                 .split("T")[0]}
@@ -90,7 +91,9 @@ export default function Chart({
         <XAxis
           dataKey="week"
           tickFormatter={(value) =>
-            new Date(value)?.toISOString().split("T")[0]
+            isNaN(Date.parse(value))
+              ? value
+              : new Date(value)?.toISOString().split("T")[0]
           }
         />
         {/* domain={['auto', 'auto']} */}
