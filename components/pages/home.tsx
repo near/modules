@@ -47,6 +47,22 @@ const rollups = [
     value: "starknet",
     label: "Starknet",
   },
+  {
+    value: "linea",
+    label: "Linea",
+  },
+  {
+    value: "aevo",
+    label: "Aevo",
+  },
+  {
+    value: "lyra",
+    label: "Lyra",
+  },
+  {
+    value: "zora",
+    label: "Zora",
+  },
 ];
 
 export default function Home() {
@@ -170,7 +186,10 @@ export default function Home() {
           className="flex items-center space-x-2
       "
         >
-          <Label htmlFor="airplane-mode">
+          <Label
+            htmlFor="airplane-mode"
+            className="text-xs text-slate-500 font-normal"
+          >
             4 MB batches
           </Label>
           <Switch
