@@ -87,7 +87,7 @@ export default function CostSavings({
   );
 
   return (
-    <div className="flex flex-col md:flex-row md:place-content-between md:items-center w-full border border-slate-200 rounded-md p-5 mb-10 bg-slate-50">
+    <div className="flex flex-col md:flex-row md:place-content-between md:items-center w-full border border-slate-200 rounded-md p-5 mb-10 bg-white">
       <div className="mb-3 md:mb-0">
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
           Total data size

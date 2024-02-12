@@ -97,7 +97,7 @@ export default function Home() {
           </h4>
           <Button
             variant="outline"
-            className="mb-12 md:mb-0 mt-7 p-6 border-slate-800 rounded-md bg-slate-50 text-slate-800 hover:bg-slate-100 hover:border-slate-900 hover:text-slate-900"
+            className="mb-12 md:mb-0 mt-7 p-6 border-slate-800 rounded-md bg-white"
             onClick={() => {
               window.open(
                 "https://github.com/near/rollup-data-availability/",
@@ -170,7 +170,7 @@ export default function Home() {
         data={rollupData}
         fourMbBatch={isSwitchOn}
       />
-      <div className="z-10 w-full text-sm border border-slate-200 rounded-md p-5 bg-slate-50">
+      <div className="z-10 w-full text-sm border border-slate-200 rounded-md p-5 bg-white">
         <h6 className="text-slate-800 font-semibold mb-5 text-center">
           Weekly Cost (L1 vs NEAR)
         </h6>
