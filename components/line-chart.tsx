@@ -47,7 +47,7 @@ export default function Chart({
             padding: "10px",
           }}
         >
-          <div>
+          <div className="text-xs text-slate-500 mb-1">
             {isNaN(Date.parse(payload[0]?.payload?.week))
               ? payload[0]?.payload?.week
               : dayjs(
@@ -55,14 +55,17 @@ export default function Chart({
                   "YYYY-MM-DDTHH:mm:ss.SSS[Z]"
                 ).format("YYYY-MM-DD")}
           </div>
-          <div>
+          <div className="flex items-center">
+            <div className="bg-primary-red w-1.5 h-1.5 rounded-full mr-2" />
+            <div />
             {data[0]?.name}:{" "}
             {new Intl.NumberFormat("en-US", {
               style: "currency",
               currency: "USD",
             }).format(payload[0]?.value || 0)}
           </div>
-          <div>
+          <div className="flex items-center">
+            <div className="bg-primary-green w-1.5 h-1.5 rounded-full mr-2" />
             near:{" "}
             {new Intl.NumberFormat("en-US", {
               style: "currency",
@@ -126,6 +129,7 @@ export default function Chart({
           name="Estimated NEAR DA Cost"
           stroke="#00B654"
           strokeWidth={2}
+          activeDot={{ r: 8 }}
         />
       </LineChart>
     </ResponsiveContainer>
