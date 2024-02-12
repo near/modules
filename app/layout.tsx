@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "NEARMODULAR.COM",
-  description: "Explorer for data availability on NEAR",
+  description: "Explore data availability on NEAR",
 };
 
 export default function RootLayout({
