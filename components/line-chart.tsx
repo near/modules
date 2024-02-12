@@ -1,5 +1,9 @@
 "use client";
 import React from "react";
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+dayjs.extend(customParseFormat);
+
 import {
   LineChart,
   Line,
@@ -44,11 +48,12 @@ export default function Chart({
           }}
         >
           <div>
-            {payload[0]?.payload?.week &&
-              !isNaN(Date.parse(payload[0].payload.week)) &&
-              new Date(payload[0].payload.week)
-                .toISOString()
-                .split("T")[0]}
+            {isNaN(Date.parse(payload[0]?.payload?.week))
+              ? payload[0]?.payload?.week
+              : dayjs(
+                  payload[0]?.payload?.week,
+                  "YYYY-MM-DDTHH:mm:ss.SSS[Z]"
+                ).format("YYYY-MM-DD")}
           </div>
           <div>
             {data[0]?.name}:{" "}
@@ -93,20 +98,13 @@ export default function Chart({
           tickFormatter={(value) =>
             isNaN(Date.parse(value))
               ? value
-              : new Date(value)?.toISOString().split("T")[0]
+              : dayjs(
+                  value,
+                  "YYYY-MM-DDTHH:mm:ss.SSS[Z]"
+                ).format("YYYY-MM-DD")
           }
         />
-        {/* domain={['auto', 'auto']} */}
-        <YAxis
-          scale="log"
-          domain={[1, 5000000]}
-          tickFormatter={(value) =>
-            new Intl.NumberFormat("en-US", {
-              style: "currency",
-              currency: "USD",
-            }).format(value)
-          }
-        />
+        <YAxis scale="log" domain={[1, 5000000]} />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
         <Line

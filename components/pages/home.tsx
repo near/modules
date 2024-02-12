@@ -7,6 +7,9 @@ import { ArrowUpRight } from "@phosphor-icons/react";
 import CostSavings from "@/components/cost-savings";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+dayjs.extend(customParseFormat);
 
 interface DataItem {
   calldata_mb: number;
@@ -68,8 +71,8 @@ export default function Home() {
   rollupData.sort((a, b) => {
     if (!a.week || !b.week) return 0;
     return (
-      new Date(a.week).getTime() -
-      new Date(b.week).getTime()
+      dayjs(a.week, "YYYY-MM-DDTHH:mm:ss.SSS[Z]").unix() -
+      dayjs(b.week, "YYYY-MM-DDTHH:mm:ss.SSS[Z]").unix()
     );
   });
 
@@ -168,26 +171,23 @@ export default function Home() {
         {rollupData && rollupData.length > 0 && (
           <div className="text-xs text-slate-500 text-right mt-6 mb-2">
             Showing data from 
-            {rollupData &&
-            rollupData.length > 0 &&
-            rollupData[0]?.week &&
-            !isNaN(Date.parse(rollupData[0]?.week))
-              ? new Date(rollupData?.[0]?.week)
-                  .toISOString()
-                  .split("T")[0]
-              : "N/A"}
+            {isNaN(Date.parse(rollupData[0]?.week))
+              ? rollupData[0]?.week
+              : dayjs(
+                  rollupData[0]?.week,
+                  "YYYY-MM-DDTHH:mm:ss.SSS[Z]"
+                ).format("YYYY-MM-DD")}
             {" to "}
-            {rollupData &&
-            rollupData.length > 0 &&
-            rollupData[rollupData.length - 1]?.week &&
-            rollupData[0]?.week &&
-            !isNaN(Date.parse(rollupData[0]?.week))
-              ? new Date(
-                  rollupData?.[rollupData.length - 1]?.week
-                )
-                  .toISOString()
-                  .split("T")[0]
-              : "N/A"}
+            {isNaN(
+              Date.parse(
+                rollupData?.[rollupData.length - 1]?.week
+              )
+            )
+              ? rollupData?.[rollupData.length - 1]?.week
+              : dayjs(
+                  rollupData?.[rollupData.length - 1]?.week,
+                  "YYYY-MM-DDTHH:mm:ss.SSS[Z]"
+                ).format("YYYY-MM-DD")}
           </div>
         )}
       </div>

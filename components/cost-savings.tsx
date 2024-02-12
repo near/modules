@@ -58,10 +58,6 @@ export default function CostSavings({
       totalCostRollup(data) - totalCostNearDA(data)
     );
 
-  // calculate totalSavings as a percentage
-  const totalSavingsPercent = (data: DataItem[]) =>
-    (totalSavings(data) / totalCostRollup(data)) * 100;
-
   // calculate savings per MB w/ NEAR DA
   const savingsPerMB = (data: DataItem[]) =>
     Math.round(
