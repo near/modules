@@ -83,7 +83,14 @@ export default function Home() {
           <h1 className="text-slate-800">
             Rollup Data Availability
           </h1>
-          <h1 className="text-slate-800 mt-3">on NEAR</h1>
+          <h1 className="text-slate-800 mt-3">
+            on{" "}
+            <a href="https://near.org" target="_blank">
+              <span className="underline text-green-500">
+                <span className="text-slate-800">NEAR</span>
+              </span>
+            </a>
+          </h1>
           <h4 className="mt-6 font-light max-w-md text-slate-800 leading-9">
             Data availability on NEAR offers unmatched
             performance and cost efficiency
