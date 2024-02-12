@@ -77,6 +77,17 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: linear-gradient(
+        0deg,
+        rgba(226, 232, 240, 0.5) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        90deg,
+        rgba(226, 232, 240, 0.5) 1px,
+        transparent 1px
+      );
+    background-size: 100px 100px;
   }
 }
 
