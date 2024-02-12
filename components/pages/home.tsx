@@ -118,16 +118,20 @@ export default function Home() {
             <p className="font-light text-slate-800 my-3 leading-7">
               Storing calldata on NEAR Protocol is
               approximately{" "}
-              <span className="font-semibold">
-                <CountUp
-                  start={1000}
-                  end={8000 || 0}
-                  duration={2.5}
-                  separator=","
-                />
-                x
+              <span className="hidden lg:inline">
+                <span className="font-semibold">
+                  <CountUp
+                    start={1}
+                    end={8000 || 0}
+                    duration={2.5}
+                    separator=","
+                  />
+                  x <br />
+                </span>
               </span>
-              <br />
+              <span className="font-semibold inline lg:hidden">
+                8000x{" "}
+              </span>
               cheaper than storing the same amount of data
               on Ethereum.
             </p>
