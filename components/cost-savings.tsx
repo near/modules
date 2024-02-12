@@ -90,7 +90,7 @@ export default function CostSavings({
     <div className="flex flex-col md:flex-row md:place-content-between md:items-center w-full border border-slate-200 rounded-md p-5 mb-10 bg-white">
       <div className="mb-3 md:mb-0">
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
-          Total data size
+          Total data size (L1)
           <InfoTooltip>
             Total data processed by the rollup for the
             period
@@ -102,7 +102,7 @@ export default function CostSavings({
       </div>
       <div className="mb-3 md:mb-0">
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
-          Total cost w/ L1
+          Total cost (L1)
           <InfoTooltip>
             Actual cost for the selected rollup to store
             data on a blockchain for the period
@@ -114,7 +114,7 @@ export default function CostSavings({
       </div>
       <div className="mb-3 md:mb-0">
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
-          Total cost w/ NEAR DA
+          Total cost (NEAR)
           <InfoTooltip>
             Estimated cost to store the same amount of data
             on NEAR
@@ -126,7 +126,7 @@ export default function CostSavings({
       </div>
       <div className="mb-3 md:mb-0">
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
-          Total savings w/ NEAR DA
+          Total savings (NEAR)
           <InfoTooltip>
             Estimated savings to store the same amount of
             data on NEAR
@@ -138,7 +138,7 @@ export default function CostSavings({
       </div>
       <div>
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
-          Savings per MB w/ NEAR DA
+          Savings per MB (NEAR)
           <InfoTooltip>
             Estimated savings per MB to store the same
             amount of data on NEAR
