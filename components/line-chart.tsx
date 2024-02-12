@@ -56,7 +56,7 @@ export default function Chart({
                 ).format("YYYY-MM-DD")}
           </div>
           <div className="flex items-center">
-            <div className="bg-primary-red w-1.5 h-1.5 rounded-full mr-2" />
+            <div className="bg-black w-1.5 h-1.5 rounded-full mr-2" />
             <div />
             {data[0]?.name}:{" "}
             {new Intl.NumberFormat("en-US", {
@@ -114,7 +114,7 @@ export default function Chart({
           type="monotone"
           dataKey="l1_calldata_cost_usd"
           name="L1 DA Cost"
-          stroke="#FF6442"
+          stroke="black"
           activeDot={{ r: 8 }}
           strokeDasharray="5 5"
           strokeWidth={2}
