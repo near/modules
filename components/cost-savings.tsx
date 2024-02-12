@@ -96,7 +96,7 @@ export default function CostSavings({
             period
           </InfoTooltip>
         </div>
-        <div className="font-semibold">
+        <div className="font-semibold text-lg">
           {totalDataMB} MB
         </div>
       </div>
@@ -108,7 +108,7 @@ export default function CostSavings({
             data on a blockchain for the period
           </InfoTooltip>
         </div>
-        <div className="font-semibold">
+        <div className="font-semibold text-lg">
           {totalCostRollupUSD}
         </div>
       </div>
@@ -120,7 +120,7 @@ export default function CostSavings({
             on NEAR
           </InfoTooltip>
         </div>
-        <div className="font-semibold text-green-500">
+        <div className="font-semibold text-green-500 text-lg">
           {totalCostNearDAUSD}
         </div>
       </div>
@@ -132,7 +132,7 @@ export default function CostSavings({
             data on NEAR
           </InfoTooltip>
         </div>
-        <div className="font-semibold text-green-500">
+        <div className="font-semibold text-green-500 text-lg">
           {totalSavingsUSD}
         </div>
       </div>
@@ -144,7 +144,7 @@ export default function CostSavings({
             amount of data on NEAR
           </InfoTooltip>
         </div>
-        <div className="font-semibold text-green-500">
+        <div className="font-semibold text-green-500 text-lg">
           {savingsPerMBUSD}/MB
         </div>
       </div>

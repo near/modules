@@ -88,7 +88,7 @@ export default function Chart({
         margin={{
           top: 0,
           right: 0,
-          left: 50,
+          left: 20,
           bottom: 0,
         }}
       >
