@@ -100,7 +100,7 @@ a:hover {
 }
 
 h1 {
-  @apply text-2xl font-semibold;
+  @apply text-2xl font-bold;
   @apply md:text-4xl;
 }
 

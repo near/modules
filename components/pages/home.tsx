@@ -10,6 +10,7 @@ import { Switch } from "@/components/ui/switch";
 import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
+import CountUp from "react-countup";
 
 interface DataItem {
   calldata_mb: number;
@@ -116,8 +117,19 @@ export default function Home() {
             </h5>
             <p className="font-light text-slate-800 my-3 leading-7">
               Storing calldata on NEAR Protocol is
-              approximately 8000x cheaper than storing the
-              same amount of data on Ethereum.
+              approximately{" "}
+              <span className="font-semibold">
+                <CountUp
+                  start={1000}
+                  end={8000 || 0}
+                  duration={2.5}
+                  separator=","
+                />
+                x
+              </span>
+              <br />
+              cheaper than storing the same amount of data
+              on Ethereum.
             </p>
           </div>
           <div className="mb-6">
