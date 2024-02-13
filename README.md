@@ -1,4 +1,4 @@
-## NEARMODULES.COM
+## NEARMODULAR.COM
 
 Run the development server:
 
