@@ -71,7 +71,7 @@ export default function Home() {
   );
   const [isSwitchOn, setSwitchState] = useState(false);
   const [selectedRollup, setSelectedRollup] =
-    useState("arbitrum");
+    useState("aevo");
 
   const fetchRollupData = async (rollup: string) => {
     const response = await fetch(

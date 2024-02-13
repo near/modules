@@ -53,30 +53,34 @@ export default function Combobox({
           <CommandInput placeholder="Search rollup..." />
           <CommandEmpty>No rollup found.</CommandEmpty>
           <CommandGroup>
-            {data.map((rollup) => (
-              <CommandItem
-                key={rollup.value}
-                value={rollup.value}
-                onSelect={(currentValue) => {
-                  setValue(
-                    currentValue === value
-                      ? ""
-                      : currentValue
-                  );
-                  setOpen(false);
-                }}
-              >
-                <Check
-                  className={cn(
-                    "mr-2 h-4 w-4",
-                    value === rollup.value
-                      ? "opacity-100"
-                      : "opacity-0"
-                  )}
-                />
-                {rollup.label}
-              </CommandItem>
-            ))}
+            {data
+              .sort((a, b) =>
+                a.label.localeCompare(b.label)
+              )
+              .map((rollup) => (
+                <CommandItem
+                  key={rollup.value}
+                  value={rollup.value}
+                  onSelect={(currentValue) => {
+                    setValue(
+                      currentValue === value
+                        ? ""
+                        : currentValue
+                    );
+                    setOpen(false);
+                  }}
+                >
+                  <Check
+                    className={cn(
+                      "mr-2 h-4 w-4",
+                      value === rollup.value
+                        ? "opacity-100"
+                        : "opacity-0"
+                    )}
+                  />
+                  {rollup.label}
+                </CommandItem>
+              ))}
           </CommandGroup>
         </Command>
       </PopoverContent>
