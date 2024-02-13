@@ -88,7 +88,7 @@ export default function Chart({
         margin={{
           top: 0,
           right: 0,
-          left: 20,
+          left: 45,
           bottom: 0,
         }}
       >
@@ -107,7 +107,15 @@ export default function Chart({
                 ).format("YYYY-MM-DD")
           }
         />
-        <YAxis scale="log" domain={[1, 5000000]} />
+        <YAxis
+          scale="log"
+          domain={[1, 5000000]}
+          tickFormatter={(value) =>
+            `$${Number(value).toLocaleString("en-US", {
+              minimumFractionDigits: 2,
+            })}`
+          }
+        />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
         <Line
