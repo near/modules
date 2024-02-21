@@ -11,6 +11,7 @@ import dayjs from "dayjs";
 import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
 import CountUp from "react-countup";
+import FaqAccordion from "@/components/faq-accordion";
 
 interface DataItem {
   calldata_mb: number;
@@ -232,6 +233,12 @@ export default function Home() {
                 ).format("YYYY-MM-DD")}
           </div>
         )}
+      </div>
+      <div className="w-full border border-slate-200 rounded-md p-5 pt-0 pb-12 mt-10 bg-white">
+        <h2 className="text-slate-800 text-2xl mt-12 font-bold text-center">
+          FAQ
+        </h2>
+        <FaqAccordion />
       </div>
     </main>
   );
