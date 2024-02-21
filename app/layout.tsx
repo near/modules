@@ -5,8 +5,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NEARMODULAR.COM",
-  description: "Explore data availability on NEAR",
+  title: "NearModular.com",
+  description: "Explore modularity on NEAR",
 };
 
 export default function RootLayout({
