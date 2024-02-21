@@ -234,7 +234,7 @@ export default function Home() {
           </div>
         )}
       </div>
-      <h2 className="text-slate-800 text-2xl mt-20 font-bold text-center">
+      <h2 className="text-slate-800 text-2xl mt-20 font-semibold text-center">
         Watch talks about NEAR DA
       </h2>
       <div className="flex my-20 flex-col md:flex-row">
@@ -257,7 +257,7 @@ export default function Home() {
           ></iframe>
         </div>
       </div>
-      <h2 className="text-slate-800 text-2xl mt-12 mb-20 font-bold text-center">
+      <h2 className="text-slate-800 text-2xl mt-12 mb-20 font-semibold text-center">
         Frequently Asked Questions
       </h2>
       <div className="w-full border border-slate-200 rounded-md p-5 mt-30 bg-white">
