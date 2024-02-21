@@ -95,7 +95,7 @@ export default function Home() {
   });
 
   return (
-    <main className="min-h-screen md:py-6 pb-6">
+    <main className="min-h-screen md:py-6 pb-6 mb-20">
       <section className="mb-8 flex flex-wrap">
         <div className="w-full md:w-1/2">
           <h1 className="text-slate-800">
@@ -129,7 +129,7 @@ export default function Home() {
         </div>
         <div className="w-full md:w-1/2 max-w-lg">
           <div className="mb-6">
-            <h5 className="text-slate-800">
+            <h5 className="text-slate-800 text-2xl">
               Drastically reduce your costs
             </h5>
             <p className="font-light text-slate-800 my-3 leading-7">
@@ -154,7 +154,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mb-6">
-            <h5 className="text-slate-800">
+            <h5 className="text-slate-800 text-2xl">
               Easily validate proofs
             </h5>
             <p className="font-light text-slate-800 my-3 leading-7">
@@ -164,7 +164,7 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <h5 className="text-slate-800">
+            <h5 className="text-slate-800 text-2xl">
               Simple to interact with
             </h5>
             <p className="font-light text-slate-800 my-3 leading-7">
@@ -234,10 +234,33 @@ export default function Home() {
           </div>
         )}
       </div>
-      <div className="w-full border border-slate-200 rounded-md p-5 pt-0 pb-12 mt-10 bg-white">
-        <h2 className="text-slate-800 text-2xl mt-12 font-bold text-center">
-          FAQ
-        </h2>
+      <h2 className="text-slate-800 text-2xl mt-20 font-bold text-center">
+        Watch talks about NEAR DA
+      </h2>
+      <div className="flex my-20 flex-col md:flex-row">
+        <div className="w-100 md:w-1/2">
+          <iframe
+            className="w-full h-96 rounded-md"
+            src="https://www.youtube.com/embed/U1IfP435Aow"
+            title="Introducing the NEAR Data Availability Layer"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+        <div className="w-100 md:w-1/2 mt-10 md:mt-0 md:ml-16">
+          <iframe
+            className="w-full h-96 rounded-md"
+            src="https://www.youtube.com/embed/GJOTSUeRKkk"
+            title="Layer 2 Stage | NEAR as a Data Availability Layer for Ethereum Rollups"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
+      <h2 className="text-slate-800 text-2xl mt-12 mb-20 font-bold text-center">
+        Frequently Asked Questions
+      </h2>
+      <div className="w-full border border-slate-200 rounded-md p-5 mt-30 bg-white">
         <FaqAccordion />
       </div>
     </main>
