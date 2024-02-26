@@ -21,6 +21,7 @@ interface DataItem {
   week: string;
   weekly_approx_near_l2_calldata_cost_1mb_usd: number;
   weekly_approx_near_l2_calldata_cost_4mb_usd: number;
+  weekly_approx_celestia_l2_calldata_cost_1mb_usd: number;
 }
 
 const rollups = [
@@ -139,7 +140,7 @@ export default function Home() {
                 <span className="font-semibold">
                   <CountUp
                     start={1}
-                    end={8000 || 0}
+                    end={85000 || 0}
                     duration={2.5}
                     separator=","
                   />
@@ -147,7 +148,7 @@ export default function Home() {
                 </span>
               </span>
               <span className="font-semibold inline lg:hidden">
-                8000x{" "}
+                85000x{" "}
               </span>
               cheaper than storing the same amount of data
               on Ethereum.
@@ -208,7 +209,13 @@ export default function Home() {
       />
       <div className="z-10 w-full text-sm border border-slate-200 rounded-md p-5 bg-white">
         <h6 className="text-slate-800 font-semibold mb-5 text-center">
-          Weekly Cost (L1 vs NEAR)
+          DA cost for{" "}
+          {
+            rollups.find(
+              (rollup) => rollup.value === selectedRollup
+            )?.label
+          }{" "}
+          using ETH vs Celestia vs NEAR
         </h6>
         <Chart data={rollupData} fourMbBatch={isSwitchOn} />
         {rollupData && rollupData.length > 0 && (

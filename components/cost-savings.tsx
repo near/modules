@@ -10,6 +10,7 @@ interface DataItem {
   week: string;
   weekly_approx_near_l2_calldata_cost_1mb_usd: number;
   weekly_approx_near_l2_calldata_cost_4mb_usd: number;
+  weekly_approx_celestia_l2_calldata_cost_1mb_usd: number;
 }
 
 export default function CostSavings({

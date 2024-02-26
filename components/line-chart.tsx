@@ -57,12 +57,19 @@ export default function Chart({
           </div>
           <div className="flex items-center">
             <div className="bg-black w-1.5 h-1.5 rounded-full mr-2" />
-            <div />
             {data[0]?.name}:{" "}
             {new Intl.NumberFormat("en-US", {
               style: "currency",
               currency: "USD",
             }).format(payload[0]?.value || 0)}
+          </div>
+          <div className="flex items-center">
+            <div className="bg-indigo-600 w-1.5 h-1.5 rounded-full mr-2" />
+            celestia:{" "}
+            {new Intl.NumberFormat("en-US", {
+              style: "currency",
+              currency: "USD",
+            }).format(payload[1]?.value || 0)}
           </div>
           <div className="flex items-center">
             <div className="bg-primary-green w-1.5 h-1.5 rounded-full mr-2" />
@@ -121,8 +128,17 @@ export default function Chart({
         <Line
           type="monotone"
           dataKey="l1_calldata_cost_usd"
-          name="L1 DA Cost"
+          name="ETH DA Cost"
           stroke="black"
+          activeDot={{ r: 8 }}
+          strokeDasharray="5 5"
+          strokeWidth={2}
+        />
+        <Line
+          type="monotone"
+          dataKey="weekly_approx_celestia_l2_calldata_cost_1mb_usd"
+          name="Celestia DA Cost"
+          stroke="#4F46E5"
           activeDot={{ r: 8 }}
           strokeDasharray="5 5"
           strokeWidth={2}
@@ -134,7 +150,7 @@ export default function Chart({
               ? "weekly_approx_near_l2_calldata_cost_4mb_usd"
               : "weekly_approx_near_l2_calldata_cost_1mb_usd"
           }
-          name="Estimated NEAR DA Cost"
+          name="NEAR DA Cost"
           stroke="#00B654"
           strokeWidth={2}
           activeDot={{ r: 8 }}
