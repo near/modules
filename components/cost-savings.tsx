@@ -91,7 +91,7 @@ export default function CostSavings({
     <div className="flex flex-col md:flex-row md:place-content-between md:items-center w-full border border-slate-200 rounded-md p-5 mb-10 bg-white">
       <div className="mb-3 md:mb-0">
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
-          Total data size (L1)
+          Total data size (ETH)
           <InfoTooltip>
             Total data processed by the rollup for the
             period
@@ -103,7 +103,7 @@ export default function CostSavings({
       </div>
       <div className="mb-3 md:mb-0">
         <div className="flex items-center text-xs text-slate-500 mb-0.5">
-          Total cost (L1)
+          Total cost (ETH)
           <InfoTooltip>
             Actual cost for the selected rollup to store
             data on a blockchain for the period

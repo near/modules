@@ -57,7 +57,7 @@ export default function Chart({
           </div>
           <div className="flex items-center">
             <div className="bg-black w-1.5 h-1.5 rounded-full mr-2" />
-            {data[0]?.name}:{" "}
+            ETH:{" "}
             {new Intl.NumberFormat("en-US", {
               style: "currency",
               currency: "USD",
@@ -65,7 +65,7 @@ export default function Chart({
           </div>
           <div className="flex items-center">
             <div className="bg-indigo-600 w-1.5 h-1.5 rounded-full mr-2" />
-            celestia:{" "}
+            Celestia:{" "}
             {new Intl.NumberFormat("en-US", {
               style: "currency",
               currency: "USD",
@@ -73,7 +73,7 @@ export default function Chart({
           </div>
           <div className="flex items-center">
             <div className="bg-primary-green w-1.5 h-1.5 rounded-full mr-2" />
-            near:{" "}
+            NEAR:{" "}
             {new Intl.NumberFormat("en-US", {
               style: "currency",
               currency: "USD",
