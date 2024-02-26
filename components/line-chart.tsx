@@ -77,7 +77,7 @@ export default function Chart({
             {new Intl.NumberFormat("en-US", {
               style: "currency",
               currency: "USD",
-            }).format(payload[1]?.value || 0)}
+            }).format(payload[2]?.value || 0)}
           </div>
         </div>
       );
