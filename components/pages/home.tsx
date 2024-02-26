@@ -227,7 +227,7 @@ export default function Home() {
       />
       <div className="z-10 w-full text-sm border border-slate-200 rounded-md p-5 bg-white">
         <h6 className="text-slate-800 font-semibold mb-5 text-center text-base">
-          DA cost for{" "}
+          Weekly DA cost for{" "}
           {
             rollups.find(
               (rollup) => rollup.value === selectedRollup
