@@ -3,7 +3,7 @@ import React from "react";
 
 export default function Nav() {
   return (
-    <nav className="flex mb-12 text-sm">
+    <nav className="flex mb-12 text-sm items-center">
       <h4 className="text-slate-800 text-sm font-bold">
         NEAR
         <span className="text-green-500">MODULAR</span>

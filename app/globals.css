@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  --primary-green: #00b654;
+  --primary-green: #3b6b51;
   --primary-red: #ff6442;
 }
 
@@ -76,7 +76,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-slate-50 text-foreground;
     background-image: linear-gradient(
         0deg,
         rgba(226, 232, 240, 0.5) 1px,

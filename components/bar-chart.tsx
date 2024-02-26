@@ -1,12 +1,9 @@
 "use client";
 import React from "react";
-import dayjs from "dayjs";
-import customParseFormat from "dayjs/plugin/customParseFormat";
-dayjs.extend(customParseFormat);
-
 import {
-  LineChart,
-  Line,
+  BarChart,
+  Bar,
+  Rectangle,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -15,6 +12,9 @@ import {
   ResponsiveContainer,
   TooltipProps,
 } from "recharts";
+import dayjs from "dayjs";
+import customParseFormat from "dayjs/plugin/customParseFormat";
+dayjs.extend(customParseFormat);
 
 interface DataItem {
   calldata_mb: number;
@@ -24,10 +24,9 @@ interface DataItem {
   week: string;
   weekly_approx_near_l2_calldata_cost_1mb_usd: number;
   weekly_approx_near_l2_calldata_cost_4mb_usd: number;
-  weekly_approx_celestia_l2_calldata_cost_1mb_usd: number;
 }
 
-export default function Chart({
+export default function CostBarChart({
   data,
   fourMbBatch,
 }: {
@@ -57,7 +56,7 @@ export default function Chart({
                 ).format("YYYY-MM-DD")}
           </div>
           <div className="flex items-center">
-            <div className="bg-black w-1.5 h-1.5 rounded-full mr-2" />
+            <div className="bg-slate-500 w-1.5 h-1.5 rounded-full mr-2" />
             ETH:{" "}
             {new Intl.NumberFormat("en-US", {
               style: "currency",
@@ -65,7 +64,7 @@ export default function Chart({
             }).format(payload[0]?.value || 0)}
           </div>
           <div className="flex items-center">
-            <div className="bg-indigo-600 w-1.5 h-1.5 rounded-full mr-2" />
+            <div className="bg-violet-500 w-1.5 h-1.5 rounded-full mr-2" />
             Celestia:{" "}
             {new Intl.NumberFormat("en-US", {
               style: "currency",
@@ -73,7 +72,7 @@ export default function Chart({
             }).format(payload[1]?.value || 0)}
           </div>
           <div className="flex items-center">
-            <div className="bg-primary-green w-1.5 h-1.5 rounded-full mr-2" />
+            <div className="bg-green-500 w-1.5 h-1.5 rounded-full mr-2" />
             NEAR:{" "}
             {new Intl.NumberFormat("en-US", {
               style: "currency",
@@ -89,21 +88,18 @@ export default function Chart({
 
   return (
     <ResponsiveContainer width="100%" height="100%">
-      <LineChart
+      <BarChart
         width={500}
         height={300}
         data={data}
         margin={{
-          top: 0,
-          right: 0,
+          top: 20,
+          right: 30,
           left: 45,
           bottom: 0,
         }}
       >
-        <CartesianGrid
-          strokeDasharray="3 3"
-          vertical={false}
-        />
+        <CartesianGrid stroke="none" />
         <XAxis
           dataKey="week"
           tickFormatter={(value) =>
@@ -126,37 +122,29 @@ export default function Chart({
         />
         <Tooltip content={<CustomTooltip />} />
         <Legend />
-        <Line
-          type="monotone"
+        <Bar
           dataKey="l1_calldata_cost_usd"
           name="ETH DA Cost"
-          stroke="black"
-          activeDot={{ r: 8 }}
-          strokeDasharray="5 5"
-          strokeWidth={2}
+          fill="#64748B"
+          radius={[2, 2, 0, 0]}
         />
-        <Line
-          type="monotone"
+        <Bar
           dataKey="weekly_approx_celestia_l2_calldata_cost_1mb_usd"
           name="Celestia DA Cost"
-          stroke="#4F46E5"
-          activeDot={{ r: 8 }}
-          strokeDasharray="5 5"
-          strokeWidth={2}
+          fill="#A855F7"
+          radius={[2, 2, 0, 0]}
         />
-        <Line
-          type="monotone"
+        <Bar
           dataKey={
             fourMbBatch
               ? "weekly_approx_near_l2_calldata_cost_4mb_usd"
               : "weekly_approx_near_l2_calldata_cost_1mb_usd"
           }
           name="NEAR DA Cost"
-          stroke="#00B654"
-          strokeWidth={2}
-          activeDot={{ r: 8 }}
+          fill="#22C55E"
+          radius={[2, 2, 0, 0]}
         />
-      </LineChart>
+      </BarChart>
     </ResponsiveContainer>
   );
 }

@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Chart from "@/components/line-chart";
+import CostBarChart from "@/components/bar-chart";
 import Combobox from "@/components/combobox";
 import { Button } from "@/components/ui/button";
 import { ArrowUpRight } from "@phosphor-icons/react";
@@ -12,6 +13,7 @@ import customParseFormat from "dayjs/plugin/customParseFormat";
 dayjs.extend(customParseFormat);
 import CountUp from "react-countup";
 import FaqAccordion from "@/components/faq-accordion";
+import InfoTooltip from "@/components/info-tooltip";
 
 interface DataItem {
   calldata_mb: number;
@@ -95,6 +97,16 @@ export default function Home() {
     );
   });
 
+  if (
+    rollupData.length > 0 &&
+    dayjs().diff(
+      dayjs(rollupData[rollupData.length - 1].week),
+      "day"
+    ) < 6
+  ) {
+    rollupData.splice(rollupData.length - 1, 1);
+  }
+
   return (
     <main className="min-h-screen md:py-6 pb-6 mb-20">
       <section className="mb-8 flex flex-wrap">
@@ -116,7 +128,7 @@ export default function Home() {
           </h4>
           <Button
             variant="outline"
-            className="mb-12 md:mb-0 mt-7 p-6 border-slate-800 rounded-md bg-white"
+            className="mb-12 md:mb-0 mt-7 p-6 border-slate-200 rounded-lg bg-white"
             onClick={() => {
               window.open(
                 "https://github.com/near/rollup-data-availability/",
@@ -192,7 +204,13 @@ export default function Home() {
             htmlFor="airplane-mode"
             className="text-xs text-slate-500 font-normal"
           >
-            4 MB batches
+            <div className="flex items-center">
+              4 MB batches
+              <InfoTooltip>
+                Simulate cost if rollup submitted data to
+                NEAR in 4 MB batches
+              </InfoTooltip>
+            </div>
           </Label>
           <Switch
             id="airplane-mode"
@@ -208,7 +226,7 @@ export default function Home() {
         fourMbBatch={isSwitchOn}
       />
       <div className="z-10 w-full text-sm border border-slate-200 rounded-md p-5 bg-white">
-        <h6 className="text-slate-800 font-semibold mb-5 text-center">
+        <h6 className="text-slate-800 font-semibold mb-5 text-center text-base">
           DA cost for{" "}
           {
             rollups.find(
@@ -217,7 +235,11 @@ export default function Home() {
           }{" "}
           using ETH vs Celestia vs NEAR
         </h6>
-        <Chart data={rollupData} fourMbBatch={isSwitchOn} />
+        {/* <Chart data={rollupData} fourMbBatch={isSwitchOn} /> */}
+        <CostBarChart
+          data={rollupData}
+          fourMbBatch={isSwitchOn}
+        />
         {rollupData && rollupData.length > 0 && (
           <div className="text-xs text-slate-500 text-right mt-6 mb-2">
             Showing data from 
@@ -267,7 +289,7 @@ export default function Home() {
       <h2 className="text-slate-800 text-2xl mt-12 mb-20 font-semibold text-center">
         Frequently Asked Questions
       </h2>
-      <div className="w-full border border-slate-200 rounded-md p-5 mt-30 bg-white">
+      <div className="w-full border border-slate-200 rounded-lg p-5 mt-30 bg-white">
         <FaqAccordion />
       </div>
     </main>

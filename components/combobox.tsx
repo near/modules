@@ -35,7 +35,7 @@ export default function Combobox({
           variant="outline"
           role="combobox"
           aria-expanded={open}
-          className="w-[200px] justify-between my-5"
+          className="w-[200px] justify-between my-5 py-5 rounded-lg"
         >
           {value ? (
             <>{`${
