@@ -53,7 +53,7 @@ export default function CostBarChart({
               : dayjs(
                   payload[0]?.payload?.week,
                   "YYYY-MM-DDTHH:mm:ss.SSS[Z]"
-                ).format("YYYY-MM-DD")}
+                ).format("YYYY-MM-DD")}{" "}
           </div>
           <div className="flex items-center">
             <div className="bg-slate-500 w-1.5 h-1.5 rounded-full mr-2" />

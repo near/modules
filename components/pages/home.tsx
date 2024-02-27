@@ -227,13 +227,17 @@ export default function Home() {
       />
       <div className="z-10 w-full text-sm border border-slate-200 rounded-md p-5 bg-white">
         <h6 className="text-slate-800 font-semibold mb-5 text-center text-base">
-          Weekly DA cost for{" "}
-          {
-            rollups.find(
-              (rollup) => rollup.value === selectedRollup
-            )?.label
-          }{" "}
-          using ETH vs Celestia vs NEAR
+          <div>
+            Data Availability cost for{" "}
+            {
+              rollups.find(
+                (rollup) => rollup.value === selectedRollup
+              )?.label
+            }
+          </div>
+          <div className="text-sm font-normal mt-2">
+            ETH vs Celestia vs NEAR
+          </div>
         </h6>
         {/* <Chart data={rollupData} fourMbBatch={isSwitchOn} /> */}
         <CostBarChart
