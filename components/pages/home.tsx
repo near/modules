@@ -296,6 +296,23 @@ export default function Home() {
       <div className="w-full border border-slate-200 rounded-lg p-5 mt-30 bg-white">
         <FaqAccordion />
       </div>
+      <div className="flex flex-col">
+        <h2 className="text-slate-800 text-2xl mt-20 mb-12 font-semibold text-center">
+          Want to learn more?
+        </h2>
+        <Button
+          variant="outline"
+          className="p-6 border-slate-200 rounded-lg mx-auto bg-white"
+          onClick={() => {
+            window.open(
+              "https://forms.gle/LWJoTpTiCbSheUL26",
+              "_blank"
+            );
+          }}
+        >
+          Get in touch
+        </Button>
+      </div>
     </main>
   );
 }
