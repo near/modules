@@ -29,9 +29,11 @@ interface DataItem {
 export default function CostBarChart({
   data,
   fourMbBatch,
+  dateRange,
 }: {
   data: DataItem[];
   fourMbBatch: boolean;
+  dateRange: any;
 }) {
   const CustomTooltip = ({
     active,
@@ -48,12 +50,7 @@ export default function CostBarChart({
           }}
         >
           <div className="text-xs text-slate-500 mb-1">
-            {isNaN(Date.parse(payload[0]?.payload?.week))
-              ? payload[0]?.payload?.week
-              : dayjs(
-                  payload[0]?.payload?.week,
-                  "YYYY-MM-DDTHH:mm:ss.SSS[Z]"
-                ).format("YYYY-MM-DD")}{" "}
+            {dateRange}
           </div>
           <div className="flex items-center">
             <div className="bg-slate-500 w-1.5 h-1.5 rounded-full mr-2" />
@@ -94,14 +91,15 @@ export default function CostBarChart({
         data={data}
         margin={{
           top: 20,
-          right: 30,
-          left: 45,
-          bottom: 0,
+          right: 0,
+          left: 55,
+          bottom: 20,
         }}
       >
         <CartesianGrid stroke="none" />
         <XAxis
           dataKey="week"
+          hide={true}
           tickFormatter={(value) =>
             isNaN(Date.parse(value))
               ? value
@@ -121,7 +119,7 @@ export default function CostBarChart({
           }
         />
         <Tooltip content={<CustomTooltip />} />
-        <Legend />
+        <Legend wrapperStyle={{ paddingTop: "30px" }} />
         <Bar
           dataKey="l1_calldata_cost_usd"
           name="ETH DA Cost"

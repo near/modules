@@ -24,6 +24,8 @@ interface DataItem {
   weekly_approx_near_l2_calldata_cost_1mb_usd: number;
   weekly_approx_near_l2_calldata_cost_4mb_usd: number;
   weekly_approx_celestia_l2_calldata_cost_1mb_usd: number;
+  [key: string]: any;
+  dateRange: any;
 }
 
 const rollups = [
@@ -97,15 +99,68 @@ export default function Home() {
     );
   });
 
-  if (
-    rollupData.length > 0 &&
-    dayjs().diff(
-      dayjs(rollupData[rollupData.length - 1].week),
-      "day"
-    ) < 6
-  ) {
-    rollupData.splice(rollupData.length - 1, 1);
-  }
+  // remove the last week if it's not complete
+  // if (
+  //   rollupData.length > 0 &&
+  //   dayjs().diff(
+  //     dayjs(rollupData[rollupData.length - 1].week),
+  //     "day"
+  //   ) < 6
+  // ) {
+  //   rollupData.splice(rollupData.length - 1, 1);
+  // }
+
+  // remove all but last 4 weeks
+  // if (rollupData.length > 0) {
+  //   rollupData.splice(0, rollupData.length - 4);
+  // }
+
+  // Combines the data from the last 4 weeks
+  const combinedData = rollupData.reduce(
+    (accumulator: any, current: DataItem) => {
+      Object.keys(current).forEach((key: any) => {
+        if (typeof current[key] === "number") {
+          if (accumulator[key]) {
+            accumulator[key] += current[key] as number;
+          } else {
+            accumulator[key] = current[key] as number;
+          }
+        } else if (!accumulator[key]) {
+          accumulator[key] = current[key] as string;
+        }
+      });
+      return accumulator as DataItem;
+    },
+    {}
+  );
+
+  const totalDataRange = () => {
+    const firstDate = rollupData[0]?.week;
+    const lastDate =
+      rollupData[rollupData.length - 1]?.week;
+    if (firstDate && lastDate) {
+      return (
+        <>
+          {dayjs(
+            firstDate,
+            "YYYY-MM-DDTHH:mm:ss.SSS[Z]"
+          ).format("YYYY-MM-DD")}{" "}
+          -{" "}
+          {dayjs(
+            lastDate,
+            "YYYY-MM-DDTHH:mm:ss.SSS[Z]"
+          ).format("YYYY-MM-DD")}
+        </>
+      );
+    }
+    return null;
+  };
+
+  const selectedRollupLabel = rollups.find(
+    (rollup) => rollup.value === selectedRollup
+  )?.label;
+
+  const dateRange = totalDataRange();
 
   return (
     <main className="min-h-screen md:py-6 pb-6 mb-20">
@@ -224,16 +279,13 @@ export default function Home() {
       <CostSavings
         data={rollupData}
         fourMbBatch={isSwitchOn}
+        selectedRollupLabel={selectedRollupLabel || ""}
       />
       <div className="z-10 w-full text-sm border border-slate-200 rounded-md p-5 bg-white">
         <h6 className="text-slate-800 font-semibold mb-5 text-center text-base">
           <div>
-            Data Availability cost for{" "}
-            {
-              rollups.find(
-                (rollup) => rollup.value === selectedRollup
-              )?.label
-            }
+            Data Availability cost for {selectedRollupLabel}{" "}
+            ({rollupData.length} weeks)
           </div>
           <div className="text-sm font-normal mt-2">
             ETH vs Celestia vs NEAR
@@ -241,31 +293,13 @@ export default function Home() {
         </h6>
         {/* <Chart data={rollupData} fourMbBatch={isSwitchOn} /> */}
         <CostBarChart
-          data={rollupData}
+          data={[combinedData]}
           fourMbBatch={isSwitchOn}
+          dateRange={dateRange || ""}
         />
-        {rollupData && rollupData.length > 0 && (
-          <div className="text-xs text-slate-500 text-right mt-6 mb-2">
-            Showing data from 
-            {isNaN(Date.parse(rollupData[0]?.week))
-              ? rollupData[0]?.week
-              : dayjs(
-                  rollupData[0]?.week,
-                  "YYYY-MM-DDTHH:mm:ss.SSS[Z]"
-                ).format("YYYY-MM-DD")}
-            {" to "}
-            {isNaN(
-              Date.parse(
-                rollupData?.[rollupData.length - 1]?.week
-              )
-            )
-              ? rollupData?.[rollupData.length - 1]?.week
-              : dayjs(
-                  rollupData?.[rollupData.length - 1]?.week,
-                  "YYYY-MM-DDTHH:mm:ss.SSS[Z]"
-                ).format("YYYY-MM-DD")}
-          </div>
-        )}
+        <div className="text-sm text-slate-500 text-right mb-2">
+          {dateRange}
+        </div>
       </div>
       <h2 className="text-slate-800 text-2xl mt-20 font-semibold text-center">
         Watch talks about NEAR DA
