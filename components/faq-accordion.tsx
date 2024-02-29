@@ -9,8 +9,13 @@ import {
 
 const faq = [
   {
+    question: "How does this calculator work?",
+    answer:
+      "The calculator is designed to provide an estimate of the potential cost savings that can be achieved by using NEAR Data Availability (DA) compared to Ethereum and Celestia. The calculator uses real rollup data to estimate the cost of submitting the same amount of data on Celestia and NEAR using Data Availability.",
+  },
+  {
     question:
-      "Why now is the time for NEAR DA? What is the history of DA within the NEAR Protocol?",
+      "Why is now the time for NEAR DA? What is the history of DA within NEAR Protocol?",
     answer:
       "As early as 2020, NEAR had already established a solid foundation, running 4 shards and successfully onboarding 35M wallets, with 16M of these being monthly active. A scalable blockchain demands an efficient, cost-effective DA layer to achieve those metrics.  The rise of L2 during the summer not only increased the quantity of modular blockchains but also blurred the distinctions between different blockchains. Having a DA layer, and further optimizing it through smart contracts, and opening it up to the increasing number of L2s seemed not only logical but also advantageous in providing a superior experience for DA.",
   },
@@ -21,7 +26,7 @@ const faq = [
   },
   {
     question:
-      "Are there any security tradeoffs using NEAR DA?",
+      "Are there any security tradeoffs to consider while using NEAR DA?",
     answer:
       "NEAR DA process data through NEAR's consensus algorithm, Nightshade, which is secured by a number of validators and a significant stake. While this approach does provide a measure of security, like any system, it is not without potential tradeoffs.",
     answer1:
@@ -32,8 +37,7 @@ const faq = [
       "In the future, the current proving data depends on off-chain compute and archival nodes after 5 epochs (roughly 60 hours). There is work being done to get on-chain proving done via zk-proofs (more in the roadmap later).",
   },
   {
-    question:
-      "Why is DAS (Data Availability Sampling) not needed?",
+    question: "Is DAS (Data Availability Sampling) needed?",
     answer:
       "DAS is a probabilistic method used in blockchain consensus mechanisms to ensure that all nodes in the network have access to the same data in order to achieve consensus. DAS involves randomly selecting a subset of nodes in the network and asking them to confirm the availability of a particular piece of data. This process is repeated multiple times to ensure that the data is available to all nodes in the network.",
     answer1:
@@ -46,7 +50,7 @@ const faq = [
   {
     question: "Roadmap (to be released on Feb 7)",
     answer:
-      "Stay tuned for the unveiling of NEAR DA's roadmap on <new date>. This comprehensive document will outline the future trajectory of NEAR DA, including development plans, enhancements, and key milestones. The roadmap will serve as a transparent and forward-looking guide, offering insights into how NEAR DA will continue to evolve and meet the dynamic needs of the Web3 ecosystem. Be prepared for a detailed roadmap that showcases the ongoing commitment to innovation within the NEAR Protocol.",
+      "Stay tuned for the unveiling of NEAR DA's roadmap on February 7. This comprehensive document will outline the future trajectory of NEAR DA, including development plans, enhancements, and key milestones. The roadmap will serve as a transparent and forward-looking guide, offering insights into how NEAR DA will continue to evolve and meet the dynamic needs of the Web3 ecosystem. Be prepared for a detailed roadmap that showcases the ongoing commitment to innovation within the NEAR Protocol.",
   },
 ];
 
