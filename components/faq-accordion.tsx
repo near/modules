@@ -47,11 +47,6 @@ const faq = [
     answer3:
       "This is where sharding matters in NEAR Protocol’s case for the rollups. As the requirements of becoming a validator gets considerably lower (and by moving the state to memory which increases the performance of a single shard), and by allowing the primitive ‘there can exist validators that only track one shard’,  the number of shards will increase. Currently the shard capacity is capped at 4mb/s per shard, making the whole chain’s throughput cap at 16mb/s. With the introduction of Stateless Validation, this would scale to 4mb/s * n of shards which gives an abundance of blockspace, meaning that the overall throughput of the system could potentially increase indefinitely and L2 rollups do not have to compete for blockspace.",
   },
-  {
-    question: "Roadmap (to be released on Feb 7)",
-    answer:
-      "Stay tuned for the unveiling of NEAR DA's roadmap on February 7. This comprehensive document will outline the future trajectory of NEAR DA, including development plans, enhancements, and key milestones. The roadmap will serve as a transparent and forward-looking guide, offering insights into how NEAR DA will continue to evolve and meet the dynamic needs of the Web3 ecosystem. Be prepared for a detailed roadmap that showcases the ongoing commitment to innovation within the NEAR Protocol.",
-  },
 ];
 
 export default function FaqAccordion() {
