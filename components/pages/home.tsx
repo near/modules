@@ -99,22 +99,6 @@ export default function Home() {
     );
   });
 
-  // remove the last week if it's not complete
-  // if (
-  //   rollupData.length > 0 &&
-  //   dayjs().diff(
-  //     dayjs(rollupData[rollupData.length - 1].week),
-  //     "day"
-  //   ) < 6
-  // ) {
-  //   rollupData.splice(rollupData.length - 1, 1);
-  // }
-
-  // remove all but last 4 weeks
-  // if (rollupData.length > 0) {
-  //   rollupData.splice(0, rollupData.length - 4);
-  // }
-
   // Combines the data from the last 4 weeks
   const combinedData = rollupData.reduce(
     (accumulator: any, current: DataItem) => {
