@@ -269,7 +269,7 @@ export default function Home() {
         <h6 className="text-slate-800 font-semibold mb-5 text-center text-base">
           <div>
             Data Availability cost for {selectedRollupLabel}{" "}
-            ({rollupData.length} weeks)
+            ({rollupData.length} weeks)*
           </div>
           <div className="text-sm font-normal mt-2">
             ETH vs Celestia vs NEAR
@@ -281,7 +281,18 @@ export default function Home() {
           fourMbBatch={isSwitchOn}
           dateRange={dateRange || ""}
         />
-        <div className="text-sm text-slate-500 text-right mb-2">
+        <div className="text-sm text-slate-500 text-left mb-2 flex items-center justify-between">
+          <div>
+            *Cost data from{" "}
+            <a
+              href="https://dune.com/queries/2863300/4788854"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Dune Analytics
+            </a>
+          </div>
           {dateRange}
         </div>
       </div>
