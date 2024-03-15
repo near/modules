@@ -281,7 +281,7 @@ export default function Home() {
           fourMbBatch={isSwitchOn}
           dateRange={dateRange || ""}
         />
-        <div className="text-sm text-slate-500 text-left mb-2 flex items-center justify-between">
+        <div className="text-sm text-slate-500 text-left mb-2 flex flex-col justify-between md:items-center md:flex-row">
           <div>
             *Cost data from{" "}
             <a
@@ -291,6 +291,15 @@ export default function Home() {
               className="underline"
             >
               Dune Analytics
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://www.datalenses.zone/chain/celestia/calculator"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              Data Lenses
             </a>
           </div>
           {dateRange}

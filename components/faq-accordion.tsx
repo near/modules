@@ -22,6 +22,16 @@ const faq = [
         Rollup cost data (Dune Analytics)
       </a>
     ),
+    answer2: (
+      <a
+        href="https://www.datalenses.zone/chain/celestia/calculator"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline"
+      >
+        Celestia cost data (Data Lenses)
+      </a>
+    ),
   },
   {
     question: "What makes NEAR DA so cheap?",
