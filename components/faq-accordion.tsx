@@ -59,7 +59,7 @@ const faq = [
     answer2:
       "Presently, the NEAR network is secured by 210 validators and thousands of delegators. However, the goal is to bring more validators and delegators online to further decentralize the network. Joining the validator community supports the mission of decentralization and provides the opportunity to earn rewards.",
     answer3:
-      "In the future, the current proving data depends on off-chain compute and archival nodes after 5 epochs (roughly 60 hours). There is work being done to get on-chain proving done via zk-proofs (more in the roadmap later).",
+      "The current proving data depends on off-chain compute and archival nodes after 5 epochs (roughly 60 hours). In the future, we will have an upgrade to get on-chain proving via zk-proofs (more in the roadmap later).",
   },
   {
     question:
