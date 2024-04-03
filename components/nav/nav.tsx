@@ -10,8 +10,10 @@ export default function Nav() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const currentScrollPos = window.pageYOffset;
-      const visible = prevScrollPos > currentScrollPos;
+      const currentScrollPos = window.scrollY;
+      const visible =
+        prevScrollPos > currentScrollPos ||
+        currentScrollPos < 50;
 
       setPrevScrollPos(currentScrollPos);
       setVisible(visible);
