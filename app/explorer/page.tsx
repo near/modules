@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import Home from "@/components/pages/home";
+import Explorer from "@/components/pages/explorer";
 
 export default function Page() {
-  return <Home />;
+  return <Explorer />;
 }

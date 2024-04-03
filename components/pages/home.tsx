@@ -1,10 +1,9 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import Chart from "@/components/line-chart";
 import CostBarChart from "@/components/bar-chart";
 import Combobox from "@/components/combobox";
 import { Button } from "@/components/ui/button";
-import { ArrowUpRight } from "@phosphor-icons/react";
+import { ArrowRight } from "@phosphor-icons/react";
 import CostSavings from "@/components/cost-savings";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
@@ -175,8 +174,8 @@ export default function Home() {
               );
             }}
           >
-            Learn more on Github{" "}
-            <ArrowUpRight size={16} className="ml-1" />
+            Blob Explorer{" "}
+            <ArrowRight size={18} className="ml-2 mt-0.5" />
           </Button>
         </div>
         <div className="w-full md:w-1/2 max-w-lg">
