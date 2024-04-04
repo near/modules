@@ -7,8 +7,8 @@ import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "NearModular.com",
-  description: "Explore modularity on NEAR",
+  title: "Near Modular",
+  description: "Explore Modularity on NEAR",
 };
 
 export default function RootLayout({
