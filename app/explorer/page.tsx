@@ -12,17 +12,26 @@ const costPerMbData = [
 ];
 
 export default function Page() {
+  if (false)
+    return (
+      <main className="min-h-screen md:py-6 pb-6 mb-20">
+        <section>
+          <div className="flex">
+            <div className="w-full md:w-1/2">
+              <CostPerMb data={costPerMbData} />
+            </div>
+            <div className="w-full md:w-1/2">
+              <TransactionsChart />
+            </div>
+          </div>
+        </section>
+      </main>
+    );
+
   return (
     <main className="min-h-screen md:py-6 pb-6 mb-20">
       <section>
-        <div className="flex">
-          <div className="w-full md:w-1/2">
-            <CostPerMb data={costPerMbData} />
-          </div>
-          <div className="w-full md:w-1/2">
-            <TransactionsChart />
-          </div>
-        </div>
+        <h1>Coming soon...</h1>
       </section>
     </main>
   );

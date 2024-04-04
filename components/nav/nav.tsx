@@ -47,9 +47,9 @@ export default function Nav() {
         </div>
       </nav>
     );
-  } else {
-    return <OldNav />;
   }
+
+  return <OldNav />;
 }
 
 const OldNav = () => (
