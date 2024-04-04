@@ -26,7 +26,7 @@ export default function Nav() {
     };
   }, [prevScrollPos, visible]);
 
-  if (true) {
+  if (false) {
     return (
       <nav
         className={`border-b mb-12 text-sm bg-white fixed top-0 left-0 w-full transition-all z-50 duration-300 ${
@@ -54,14 +54,13 @@ export default function Nav() {
 
 const OldNav = () => (
   <nav className="flex mb-12 text-sm items-center">
-    <h4 className="text-slate-800 text-sm font-bold">
+    <h4 className="text-slate-800 text-base font-extrabold">
       NEAR
       <span className="text-green-500">MODULAR</span>
-      .COM
     </h4>
     <a
       className="ml-auto underline text-slate-800"
-      href="https://docs.near.org/data-availability/welcome"
+      href="https://docs.near.org/abstraction/data-availability"
     >
       Docs
     </a>

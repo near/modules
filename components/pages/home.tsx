@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import CostBarChart from "@/components/bar-chart";
 import Combobox from "@/components/combobox";
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "@phosphor-icons/react";
+import { ArrowUpRight } from "@phosphor-icons/react";
 import CostSavings from "@/components/cost-savings";
 import { Label } from "@/components/ui/label";
 import { Switch } from "@/components/ui/switch";
@@ -174,13 +174,16 @@ export default function Home() {
               );
             }}
           >
-            Blob Explorer{" "}
-            <ArrowRight size={18} className="ml-2 mt-0.5" />
+            Read more on Github{" "}
+            <ArrowUpRight
+              size={18}
+              className="ml-2 mt-0.5"
+            />
           </Button>
         </div>
         <div className="w-full md:w-1/2 max-w-lg">
           <div className="mb-6">
-            <h5 className="text-slate-800 text-2xl">
+            <h5 className="text-slate-800 text-xl">
               Drastically reduce your costs
             </h5>
             <p className="font-light text-slate-800 my-3 leading-7">
@@ -205,7 +208,7 @@ export default function Home() {
             </p>
           </div>
           <div className="mb-6">
-            <h5 className="text-slate-800 text-2xl">
+            <h5 className="text-slate-800 text-xl">
               Easily validate proofs
             </h5>
             <p className="font-light text-slate-800 my-3 leading-7">
@@ -215,7 +218,7 @@ export default function Home() {
             </p>
           </div>
           <div>
-            <h5 className="text-slate-800 text-2xl">
+            <h5 className="text-slate-800 text-xl">
               Simple to interact with
             </h5>
             <p className="font-light text-slate-800 my-3 leading-7">

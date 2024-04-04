@@ -21,7 +21,7 @@ export const nav_components: {
 }[] = [
   {
     title: "Docs",
-    href: "https://docs.near.org/data-availability/welcome",
+    href: "https://docs.near.org/abstraction/data-availability",
     description: "Rollup Data Availability docs",
   },
   {

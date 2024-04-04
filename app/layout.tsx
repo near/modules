@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="min-h-screen p-5 md:p-10 py-10 mt-24 max-w-screen-xl mx-auto">
+        <main className="min-h-screen p-5 md:p-10 py-10 max-w-screen-xl mx-auto">
           <Nav />
           {children}
           <Footer />
