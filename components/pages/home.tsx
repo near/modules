@@ -98,7 +98,6 @@ export default function Home() {
     );
   });
 
-  // Combines the data from the last 4 weeks
   const combinedData = rollupData.reduce(
     (accumulator: any, current: DataItem) => {
       Object.keys(current).forEach((key: any) => {
@@ -267,7 +266,7 @@ export default function Home() {
         fourMbBatch={isSwitchOn}
         selectedRollupLabel={selectedRollupLabel || ""}
       />
-      <div className="z-10 w-full text-sm border border-slate-200 rounded-md p-5 bg-white">
+      <div className="z-10 w-full text-sm border-container">
         <h6 className="text-slate-800 font-semibold mb-5 text-center text-base">
           <div>
             Data Availability cost for {selectedRollupLabel}{" "}
@@ -333,7 +332,7 @@ export default function Home() {
       <h2 className="text-slate-800 text-2xl mt-12 mb-20 font-semibold text-center">
         Frequently Asked Questions
       </h2>
-      <div className="w-full border border-slate-200 rounded-lg p-5 mt-30 bg-white">
+      <div className="w-full border-container mt-30">
         <FaqAccordion />
       </div>
       <div className="flex flex-col">

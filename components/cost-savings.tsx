@@ -109,64 +109,62 @@ export default function CostSavings({
   return (
     <div className="flex flex-col md:flex-row md:place-content-between md:items-center w-full border border-slate-200 rounded-lg p-5 mb-10 bg-white">
       <div className="mb-3 md:mb-0">
-        <div className="flex items-center text-xs text-slate-500 mb-0.5">
+        <div className="flex items-center text-sm text-slate-500 mb-1">
           Total data size ({selectedRollupLabel})
           <InfoTooltip>
             Total data processed by the rollup for the
             period
           </InfoTooltip>
         </div>
-        <div className="font-semibold text-lg">
-          {totalDataMB} MB
-        </div>
+        <h4 className="text-slate-800">{totalDataMB} MB</h4>
       </div>
       <div className="mb-3 md:mb-0">
-        <div className="flex items-center text-xs text-slate-500 mb-0.5">
+        <div className="flex items-center text-sm text-slate-500 mb-1">
           Total cost on ETH
           <InfoTooltip>
             Actual cost for the selected rollup to store
             data on a blockchain for the period
           </InfoTooltip>
         </div>
-        <div className="font-semibold text-slate-500 text-lg">
+        <h4 className="text-slate-500">
           {totalCostRollupUSD}
-        </div>
+        </h4>
       </div>
       <div className="mb-3 md:mb-0">
-        <div className="flex items-center text-xs text-slate-500 mb-0.5">
+        <div className="flex items-center text-sm text-slate-500 mb-1">
           Total cost on Celestia
           <InfoTooltip>
             Estimated cost to store the same amount of data
             on Celestia
           </InfoTooltip>
         </div>
-        <div className="font-semibold text-violet-500 text-lg">
+        <h4 className="text-violet-500">
           {totalCostCelestiaDAUSD}
-        </div>
+        </h4>
       </div>
       <div className="mb-3 md:mb-0">
-        <div className="flex items-center text-xs text-slate-500 mb-0.5">
+        <div className="flex items-center text-sm text-slate-500 mb-1">
           Total cost on NEAR
           <InfoTooltip>
             Estimated cost to store the same amount of data
             on NEAR
           </InfoTooltip>
         </div>
-        <div className="font-semibold text-green-500 text-lg">
+        <h4 className="text-green-500">
           {totalCostNearDAUSD}
-        </div>
+        </h4>
       </div>
       <div className="mb-3 md:mb-0">
-        <div className="flex items-center text-xs text-slate-500 mb-0.5">
+        <div className="flex items-center text-sm text-slate-500 mb-1">
           Total savings on NEAR
           <InfoTooltip>
             Estimated savings to store the same amount of
             data on NEAR
           </InfoTooltip>
         </div>
-        <div className="font-semibold text-green-500 text-lg">
+        <h4 className="text-green-500">
           {totalSavingsUSD}
-        </div>
+        </h4>
       </div>
     </div>
   );

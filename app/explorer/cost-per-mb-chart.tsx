@@ -23,10 +23,18 @@ export default function CostPerMb({
   data: DataItem[];
 }) {
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <ResponsiveContainer
+      width="100%"
+      height="100%"
+      minHeight="250px"
+    >
       <BarChart data={data}>
-        <YAxis scale="log" domain={[0.1, 50]} hide={true} />
-        <Legend wrapperStyle={{ paddingTop: "10px" }} />
+        <YAxis scale="log" domain={[0.1, 50]} />
+        <Legend
+          wrapperStyle={{
+            paddingTop: "16px",
+          }}
+        />
         <Bar
           dataKey="eth_cost_USD"
           name="ETH"
