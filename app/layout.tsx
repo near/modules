@@ -8,6 +8,7 @@ import Footer from "@/components/footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://nearmodular.com"),
   title: "Near Modular",
   description: "Explore Data Availability on NEAR",
   keywords: [
@@ -29,7 +30,14 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Analytics />
-        <main className="min-h-screen p-5 md:p-10 py-10 max-w-screen-xl mx-auto">
+        <main
+          className={`min-h-screen p-5 md:p-10 py-10 max-w-screen-xl mx-auto ${
+            process.env.NEXT_PUBLIC_ENABLE_EXPLORER ===
+            "true"
+              ? "mt-24"
+              : ""
+          }`}
+        >
           <Nav />
           {children}
           <Footer />

@@ -93,6 +93,13 @@
 
 .border-container {
   @apply border border-slate-200 rounded-lg p-5 bg-white;
+
+  &.small-container {
+    @apply p-3;
+  }
+  &.large-container {
+    @apply p-8;
+  }
 }
 
 a:hover {

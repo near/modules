@@ -26,7 +26,7 @@ export default function Nav() {
     };
   }, [prevScrollPos, visible]);
 
-  if (false) {
+  if (process.env.NEXT_PUBLIC_ENABLE_EXPLORER === "true") {
     return (
       <nav
         className={`border-b mb-12 text-sm bg-white fixed top-0 left-0 w-full transition-all z-50 duration-300 ${

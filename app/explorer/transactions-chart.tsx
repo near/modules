@@ -9,6 +9,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  TooltipProps,
 } from "recharts";
 
 const data = [
@@ -43,6 +44,34 @@ const data = [
 ];
 
 export default function transactionsChart() {
+  const CustomTooltip = ({
+    active,
+    payload,
+  }: TooltipProps<number, number>) => {
+    if (active && payload && payload.length) {
+      return (
+        <div
+          style={{
+            backgroundColor: "white",
+            border: "1px solid #F0F0F0",
+            borderRadius: "6px",
+            padding: "12px",
+            fontSize: "13px",
+          }}
+        >
+          <div className="flex items-center">
+            {new Intl.NumberFormat("en-US").format(
+              payload[0]?.payload.near || 0
+            )}{" "}
+            TX
+          </div>
+        </div>
+      );
+    }
+
+    return null;
+  };
+
   return (
     <ResponsiveContainer
       width="100%"
@@ -50,12 +79,25 @@ export default function transactionsChart() {
       minHeight="250px"
     >
       <LineChart data={data}>
-        <XAxis dataKey="name" />
-        <YAxis />
+        <XAxis
+          dataKey="name"
+          tickLine={false}
+          axisLine={false}
+          tick={{ fontSize: 13 }}
+        />
+        <YAxis
+          tickLine={false}
+          axisLine={false}
+          tick={{ fontSize: 13 }}
+        />
+        <Tooltip
+          cursor={{ fill: "transparent" }}
+          content={<CustomTooltip />}
+        />
         <Line
           type="monotone"
           dataKey="near"
-          stroke="#82ca9d"
+          stroke="#22c55e"
           strokeWidth={2}
           activeDot={{ r: 8 }}
         />

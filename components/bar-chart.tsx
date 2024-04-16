@@ -131,13 +131,13 @@ export default function CostBarChart({
           dataKey="l1_calldata_cost_usd"
           name="ETH DA Cost"
           fill="#64748B"
-          radius={[6, 6, 0, 0]}
+          radius={6}
         />
         <Bar
           dataKey="weekly_approx_celestia_l2_calldata_cost_1mb_usd"
           name="Celestia DA Cost"
           fill="#A855F7"
-          radius={[6, 6, 0, 0]}
+          radius={6}
         />
         <Bar
           dataKey={
@@ -147,7 +147,7 @@ export default function CostBarChart({
           }
           name="NEAR DA Cost"
           fill="#22C55E"
-          radius={[6, 6, 0, 0]}
+          radius={6}
         />
       </BarChart>
     </ResponsiveContainer>
