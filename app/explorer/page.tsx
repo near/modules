@@ -89,25 +89,25 @@ export default function Page() {
           This page provides a high-level overview of Data
           Availability on the NEAR blockchain.
         </p> */}
-        <section className="flex space-x-10 justify-between">
-          <div className="w-full md:w-1/2 border-container large-container relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 text-sm font-medium">
+        <section className="flex flex-col md:flex-row md:space-x-10 justify-between">
+          <div className="w-full md:w-1/2 border border-slate-200 rounded-lg pl-0 pt-16 py-8 sm:p-8 bg-white relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 text-sm font-medium whitespace-nowrap -mt-8 sm:mt-0">
               Avg. Cost per MB (last 7 days)
             </div>
             <CostPerMb data={costPerMbData} />
           </div>
-          <div className="w-full md:w-1/2 border-container large-container relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 text-sm font-medium">
+          <div className="w-full md:w-1/2 border border-slate-200 rounded-lg pl-0 pt-16 py-8 sm:p-8 pr-8 bg-white relative mt-10 md:mt-0">
+            <div className="absolute left-1/2 transform -translate-x-1/2 text-sm font-medium whitespace-nowrap -mt-8 sm:mt-0">
               Daily Blob Transactions (NEAR)
             </div>
             <TransactionsChart />
           </div>
         </section>
-        <section className="flex justify-between space-x-10 my-10">
+        <section className="flex justify-between space-x-10 my-10 overflow-y-auto">
           {totalsData.map((item) => (
             <div
               key={item.name}
-              className="w-1/4 border-container"
+              className="w-1/4 border-container min-w-64"
             >
               <div className="text-sm text-slate-500 mb-2 flex items-center justify-between">
                 {item.name}
@@ -122,8 +122,8 @@ export default function Page() {
           ))}
         </section>
         <section>
-          <div className="my-10 border-container large-container relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 text-sm font-medium">
+          <div className="my-10 border border-slate-200 rounded-lg pt-10 bg-white relative pr-6 sm:pt-8 sm:pb-4 sm:pl-2">
+            <div className="absolute left-1/2 transform -translate-x-1/2 text-sm font-medium whitespace-nowrap -mt-2 sm:mt-0">
               Hourly Availability (last 7 days)
             </div>
             <AvailabilityBar />
@@ -135,11 +135,11 @@ export default function Page() {
           </h6>
           <Button variant="outline">View all</Button>
         </div>
-        <section className="flex justify-between space-x-5 my-10">
+        <section className="flex justify-between space-x-5 my-10 overflow-y-auto">
           {latestBlobs.map((blob, index) => (
             <button
               key={index}
-              className="flex flex-col w-1/6 border-container small-container hover:bg-slate-100 rounded-lg"
+              className="flex flex-col w-1/6 border-container small-container hover:bg-slate-100 rounded-lg min-w-44"
               title={blob.hash}
             >
               <div className="font-medium text-sm">
@@ -151,11 +151,11 @@ export default function Page() {
             </button>
           ))}
         </section>
-        <div className="flex justify-between items-center mb-10">
+        <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-5 sm:mb-10">
           <h6 className="text-slate-800 font-semibold flex items-center">
             Latest Blob Transactions
           </h6>
-          <div className="w-72 max-w-72 ml-auto">
+          <div className="mt-10 sm:mt-0 sm:w-72 sm:max-w-72 sm:ml-auto">
             <SearchInput />
           </div>
         </div>
