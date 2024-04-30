@@ -17,13 +17,13 @@ export default function TransactionsTable() {
           <TableHeader>
             <TableRow>
               <TableHead>Time ago</TableHead>
-              <TableHead className="hidden sm:table-cell">
+              <TableHead className="table-cell">
                 Submitter
               </TableHead>
-              <TableHead className="hidden sm:table-cell">
+              <TableHead className="table-cell">
                 Status
               </TableHead>
-              <TableHead className="hidden md:table-cell">
+              <TableHead className="table-cell">
                 Transaction
               </TableHead>
               <TableHead className="text-right">
@@ -37,10 +37,10 @@ export default function TransactionsTable() {
           <TableBody>
             <TableRow>
               <TableCell>20 sec </TableCell>
-              <TableCell className="hidden sm:table-cell  hover:cursor-pointer">
+              <TableCell className="table-cell hover:cursor-pointer">
                 0x03ef...9a4fgh
               </TableCell>
-              <TableCell className="hidden sm:table-cell">
+              <TableCell className="table-cell">
                 <Badge
                   className="text-xs"
                   variant="default"
@@ -48,7 +48,7 @@ export default function TransactionsTable() {
                   Submitted
                 </Badge>
               </TableCell>
-              <TableCell className="hidden md:table-cell">
+              <TableCell className="table-cell">
                 0x03ef...9a4fgh
               </TableCell>
               <TableCell className="text-right">
@@ -60,10 +60,10 @@ export default function TransactionsTable() {
             </TableRow>
             <TableRow>
               <TableCell>53 sec </TableCell>
-              <TableCell className="hidden sm:table-cell  hover:cursor-pointer">
+              <TableCell className="table-cell  hover:cursor-pointer">
                 nitro.topgunbakugo.near
               </TableCell>
-              <TableCell className="hidden sm:table-cell">
+              <TableCell className="table-cell">
                 <Badge
                   className="text-xs"
                   variant="destructive"
@@ -71,7 +71,7 @@ export default function TransactionsTable() {
                   Failed
                 </Badge>
               </TableCell>
-              <TableCell className="hidden md:table-cell">
+              <TableCell className="table-cell">
                 0x03ef...9a4fgh
               </TableCell>
               <TableCell className="text-right">
@@ -83,10 +83,10 @@ export default function TransactionsTable() {
             </TableRow>
             <TableRow>
               <TableCell>5 min </TableCell>
-              <TableCell className="hidden sm:table-cell  hover:cursor-pointer">
+              <TableCell className="table-cell hover:cursor-pointer">
                 nitro.topgunbakugo.near
               </TableCell>
-              <TableCell className="hidden sm:table-cell">
+              <TableCell className="table-cell">
                 <Badge
                   className="text-xs"
                   variant="outline"
@@ -94,7 +94,7 @@ export default function TransactionsTable() {
                   Queued
                 </Badge>
               </TableCell>
-              <TableCell className="hidden md:table-cell">
+              <TableCell className="table-cell">
                 0x03ef...9a4fgh
               </TableCell>
               <TableCell className="text-right">
@@ -106,10 +106,10 @@ export default function TransactionsTable() {
             </TableRow>
             <TableRow>
               <TableCell>5 min </TableCell>
-              <TableCell className="hidden sm:table-cell  hover:cursor-pointer">
+              <TableCell className="table-cell  hover:cursor-pointer">
                 0x03ef...9a4fgh
               </TableCell>
-              <TableCell className="hidden sm:table-cell">
+              <TableCell className="table-cell">
                 <Badge
                   className="text-xs"
                   variant="outline"
@@ -117,7 +117,7 @@ export default function TransactionsTable() {
                   Requested
                 </Badge>
               </TableCell>
-              <TableCell className="hidden md:table-cell">
+              <TableCell className="table-cell">
                 0x03ef...9a4fgh
               </TableCell>
               <TableCell className="text-right">
@@ -129,10 +129,10 @@ export default function TransactionsTable() {
             </TableRow>
             <TableRow>
               <TableCell>7 min </TableCell>
-              <TableCell className="hidden sm:table-cell  hover:cursor-pointer">
+              <TableCell className="table-cell  hover:cursor-pointer">
                 nitro.topgunbakugo.near
               </TableCell>
-              <TableCell className="hidden sm:table-cell">
+              <TableCell className="table-cell">
                 <Badge
                   className="text-xs"
                   variant="default"
@@ -140,7 +140,7 @@ export default function TransactionsTable() {
                   Submitted
                 </Badge>
               </TableCell>
-              <TableCell className="hidden md:table-cell">
+              <TableCell className="table-cell">
                 0x03ef...9a4fgh
               </TableCell>
               <TableCell className="text-right">
@@ -152,10 +152,10 @@ export default function TransactionsTable() {
             </TableRow>
             <TableRow>
               <TableCell>40 min </TableCell>
-              <TableCell className="hidden sm:table-cell  hover:cursor-pointer">
+              <TableCell className="table-cell  hover:cursor-pointer">
                 0x03ef...9a4fgh
               </TableCell>
-              <TableCell className="hidden sm:table-cell">
+              <TableCell className="table-cell">
                 <Badge
                   className="text-xs"
                   variant="default"
@@ -163,7 +163,7 @@ export default function TransactionsTable() {
                   Verified
                 </Badge>
               </TableCell>
-              <TableCell className="hidden md:table-cell">
+              <TableCell className="table-cell">
                 0x03ef...9a4fgh
               </TableCell>
               <TableCell className="text-right">
@@ -175,10 +175,10 @@ export default function TransactionsTable() {
             </TableRow>
             <TableRow>
               <TableCell>2 hrs </TableCell>
-              <TableCell className="hidden sm:table-cell  hover:cursor-pointer">
+              <TableCell className="table-cell  hover:cursor-pointer">
                 0x03ef...9a4fgh
               </TableCell>
-              <TableCell className="hidden sm:table-cell">
+              <TableCell className="table-cell">
                 <Badge
                   className="text-xs"
                   variant="default"
@@ -186,7 +186,7 @@ export default function TransactionsTable() {
                   Submitted
                 </Badge>
               </TableCell>
-              <TableCell className="hidden md:table-cell">
+              <TableCell className="table-cell">
                 0x03ef...9a4fgh
               </TableCell>
               <TableCell className="text-right">
